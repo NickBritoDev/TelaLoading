@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="https://developer.android.com/static/images/cluster-illustrations/controllers.svg?hl=pt-br" type="image/x-icon">
+	<title>Loading...</title>
+</head>
+
+<body translate="no">
+
+	<div class="containerImg">
+		<img>
+		<p></p>
+	</div>
+
+	<div class="progress"></div>
+
+	<style>
+		body {
+			overflow: hidden;
+			width: 100%;
+			height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.containerImg {
+			width: 100%;
+			margin: 10px auto;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+		}
+
+		.containerImg img {
+			width: 1000px;
+			height: 450px;
+			border-radius: 25px;
+		}
+
+		.containerImg p {
+			font-size: 18px;
+			font-weight: bold;
+		}
+
+		.progress {
+			margin-top: 25px;
+			position: fixed;
+			bottom: 5%;
+			height: 15px;
+			width: 90%;
+			background: linear-gradient(#229544 0 0),
+				linear-gradient(#229544 0 0),
+				#dbdcef;
+			background-size: 60% 100%;
+			background-repeat: no-repeat;
+			animation: progress-7x9cg2 3s infinite;
+		}
+
+		@keyframes progress-7x9cg2 {
+			0% {
+				background-position: -150% 0, -150% 0;
+			}
+
+			66% {
+				background-position: 250% 0, -150% 0;
+			}
+
+			100% {
+				background-position: 250% 0, 250% 0;
+			}
+		}
+	</style>
+</body>
+<script>
+	let randomImg = document.querySelector('img')
+	let randomText = document.querySelector('p')
+
+	imagens = [
+		"https://i.ibb.co/MnX9B6b/2023-05-04-18db77e4-ecb6-2472-dbb7-11ba76d4bf7f-f363a296-3892-4f06-ad80-28702a0d7b6f-front.jpg",
+		"https://images.unsplash.com/photo-1560419015-7c427e8ae5ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+		"https://i.ibb.co/7bCphjn/2023-05-04-b46b00be-47aa-9f28-4fe6-3185eafd669a-380e9344-f6d1-44e5-9c10-4b28e9b680e3-front-Copia.jpg",
+		"https://images.unsplash.com/photo-1636487658582-96efd1693bcb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80",
+		"https://i.ibb.co/kgDJG61/dbgd.jpg",
+		"https://images.unsplash.com/photo-1560419398-c36ab8c174b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+		"https://i.ibb.co/5RxtX2M/spheral-Copia.jpg",
+		"https://i.ibb.co/5RxtX2M/spheral-Copia.jpg",
+		"https://i.ibb.co/BqqM0sh/spherical-Copia.jpg",
+	]
+
+	textos = [
+		"Explore o mundo virtual e mergulhe na experiência única de visitar nossa empresa sem sair de casa.",
+
+		"Descubra os segredos do nosso negócio enquanto percorre os corredores virtuais da nossa empresa.",
+
+		"Tenha acesso exclusivo a áreas restritas e conheça de perto as operações internas da nossa organização.",
+
+		"Experimente a sensação de estar fisicamente presente em nossa empresa, observando os detalhes e a atmosfera dos nossos escritórios.",
+
+		"Aprenda sobre nossa cultura corporativa e valores organizacionais enquanto explora cada setor da empresa.",
+
+		"Aproveite a comodidade de explorar nossa empresa a qualquer hora, em qualquer lugar, através do jogo de visita virtual.",
+
+		"Descubra os bastidores da produção em um ambiente virtual imersivo.",
+
+		"Compartilhe sua experiência de visita virtual com amigos e desafie-os a conhecerem nossa empresa de forma interativa e divertida.",
+	]
+
+
+	function gerarImagemAleatoria() {
+		const indexAleatorio = Math.floor(Math.random() * imagens.length);
+		const imagemAleatoria = imagens[indexAleatorio];
+		randomImg.src = imagemAleatoria;
+	}
+	function gerarTextoAleatorio() {
+		const indexAleatorio = Math.floor(Math.random() * textos.length);
+		const textoAleatorio = textos[indexAleatorio];
+		randomText.innerText = textoAleatorio
+	}
+
+	gerarImagemAleatoria();
+	gerarTextoAleatorio()
+	setInterval(gerarImagemAleatoria, 5000);
+	setInterval(gerarTextoAleatorio, 5000);
+</script>
+
+</html>
